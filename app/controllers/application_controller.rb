@@ -33,9 +33,10 @@ class ApplicationController < ActionController::Base
   #*Author*:: NamTV
   #----------------------------------------------------------------------------
   def after_sign_in_path_for(resource)
-    organization = resource.organization
-    session[:org_id] = resource.organization_id
-    (resource.admin? && organization.super_org?) ? organizations_path : organization_path(organization)
+    categories_path
+    # organization = resource.organization
+    # session[:org_id] = resource.organization_id
+    # (resource.admin? && organization.super_org?) ? organizations_path : organization_path(organization)
   end
 
   ##

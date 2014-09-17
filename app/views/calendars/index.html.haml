@@ -6,7 +6,7 @@
       .art-content-layout.layout-item-0
         .art-content-layout-row
           .art-layout-cell.layout-item-1{:style => "width: 100%"}
-            .left_content
+            .left_content{:style=>"display:none"}
               .small-menu
                 .header-text
                   =t(".danh_muc")
@@ -15,14 +15,14 @@
                     .menu-txt
                       %a{:href =>"#"}
                         =i.name
-            .right_content
+            .right_content{:style=>"width:100%"}
               %h1{:style =>"color: blue"}
                 LỊCH ĐỂ BÀN
               %hr{:size => 1,:style =>"color: lightgray;margin: 1px 0px"}
                 
               .row
                 -@list_calendars.each do |i|
-                  .col.col-lg-4
+                  .col.col-lg-3
                     =render :partial =>"shared/widget",:local =>{:calendar => i}
               .row
 

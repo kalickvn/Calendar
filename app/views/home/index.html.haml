@@ -3,7 +3,7 @@
     .art-content-layout-wrapper.layout-item-0
       .art-content-layout.layout-item-1
         .art-content-layout-row
-          .art-layout-cell.layout-item-2{:style => "width: 25%"}
+          .art-layout-cell.layout-item-2.div-a{:style => "width: 25%",:onclick =>"window.location='#{calendars_path}'"}
             %div.center_image
               =image_tag "img_lich/lich_bloc.jpg"
             %h1 Lịch tết 2015
@@ -13,7 +13,7 @@
             .more_nav
               %a{:href =>"#{calendars_path}"}  chi tiết >>  
             %br/
-          .art-layout-cell.layout-item-3{:style => "width: 25%"}
+          .art-layout-cell.layout-item-3.div-a{:style => "width: 25%",:onclick =>"window.location='#{calendars_path}'"}
             %div.center_image
               =image_tag "img_lich/lich_bloc.jpg"
             %h1 Lịch Bloc
@@ -22,7 +22,7 @@
             .more_nav
               %a{:href =>"#{calendars_path}"}  chi tiết >>  
             %br/
-          .art-layout-cell.layout-item-4{:style => "width: 25%"}
+          .art-layout-cell.layout-item-4.div-a{:style => "width: 25%",:onclick =>"window.location='#{calendars_path}'"}
             %div.center_image
               =image_tag "img_lich/lich_bloc.jpg"
             %h1 Lịch để bàn
@@ -31,7 +31,7 @@
             .more_nav
               %a{:href =>"#{calendars_path}"}  chi tiết >>  
             %br/
-          .art-layout-cell.layout-item-5{:style => "width: 25%"}
+          .art-layout-cell.layout-item-5.div-a{:style => "width: 25%",:onclick =>"window.location='#{calendars_path}'"}
             %div.center_image
               =image_tag "img_lich/lich_bloc.jpg"
             %h1 Lịch lò xo
@@ -93,8 +93,8 @@
           /   %p{:style => "text-align: left;"}
           /     %span{:style => "color: rgb(21, 28, 35);"}
           /       %a.art-button{:href => "#"} Read more
-          .art-layout-cell.layout-item-8.slide_thuy{:style => "width: 75%"}
-            = render :partial =>"shared/home_slider"
+          .art-layout-cell.layout-item-8.slide_thuy.border-lightgray{:style => "width: 75%"}
+            = render :partial =>"shared/intro"
           .art-layout-cell.layout-item-9{:style => "width: 25%"}
             %h2
               %span{:style => "color: rgb(21, 28, 35); font-weight: bold;font-size:20px;"} LỊCH THEO CHỦ ĐỀ

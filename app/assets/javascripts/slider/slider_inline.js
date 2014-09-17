@@ -1,7 +1,7 @@
 jQuery(document).ready(function ($) {
     max_width = $(".slide_thuy").width();
     $("#slider1_container").width(max_width);
-    $(".slide_custom").width(max_width);
+    $(".slide_custom").width(max_width-6);
     $(".jssort01").width(max_width);
     
             var _SlideshowTransitions = [

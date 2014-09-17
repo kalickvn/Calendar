@@ -1,5 +1,7 @@
 class CategoriesController < ApplicationController
   layout "admin"
+  def index
+  end
   def new
     @category = Category.new
   end

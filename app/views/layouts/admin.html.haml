@@ -21,8 +21,6 @@
       %header.art-header
         
         .art-shapes
-        %h1.art-headline{"data-left" => "10.58%"}
-          %a{:href => "#"} CTY IN ẤN LỊCH
         %nav.art-nav
           %ul.art-hmenu
             %li
@@ -39,12 +37,32 @@
               %a{:href => "vacations.html"} LỊCH HOT
             %li
               %a{:href => "#{contact_calendars_path}"} LIÊN HỆ
+      .banner_header
       .art-sheet.clearfix
         .art-layout-wrapper
           .art-content-layout
             .art-content-layout-row
               .art-layout-cell.art-content
-                =yield
+                %div{:style=>"height:5px"}
+                .art-layout-cell.art-content
+                  %article.art-post.art-article
+                    .art-postcontent.art-postcontent-0.clearfix{:style=>"background-color: white;border-radius: 12px;padding: 21px;"}
+                      .art-content-layout.layout-item-0
+                        .art-content-layout-row
+                          .art-layout-cell.layout-item-1{:style => "width: 100%"}
+                            .left_content
+                              .small-menu
+                                .header-text
+                                  =t(".danh_muc")
+                                .normal-menu  
+                                  .menu-txt
+                                    %a{:href =>"#"} Quản lý Loại lịch
+                            .right_content
+                              %h1{:style =>"color: blue"}
+                                Danh sách loại lịch
+                              %hr{:size => 1,:style =>"color: lightgray;margin: 1px 0px"}
+                              =yield
+                            .clear-fix{:style =>"clear:both"}
         %footer.art-footer
           .art-content-layout
             .art-content-layout-row
