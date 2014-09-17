@@ -11,7 +11,15 @@
       =f.text_area_field :description
   .row
     .col.col-lg-4
-      Ghi chú:
+      Hiển thị trên menu:
     .col.col-lg-8
-      =f.check_box :name
-    
+      =f.check_box :is_show_menu
+  .row
+    .col.col-lg-4
+      Hiển thị trên menu:
+    .col.col-lg-8
+      =f.text_field :order_no
+  .row
+    .col.col-lg-4 &nbsp;
+    .col.col-lg-8
+      =f.submit "Lưu"

@@ -7,17 +7,17 @@
         .art-content-layout-row
           .art-layout-cell.layout-item-1{:style => "width: 100%;color: black"}
             %h1{:style =>"color: blue"}
-              Dat hang san pham
+              Đặt hàng sản phẩm
             %hr{:size => 1,:style =>"color: lightgray;margin: 1px 0px"}
             = form_tag send_product_contact_calendars_path do |f|
               .row
                 .col.col-lg-4
-                  Ten san pham:
+                  Tên sản phẩm:
                 .col.col-lg-8
                   Lich bloc
               .row
                 .col.col-lg-4
-                  So Luong:
+                  Số lượng:
                 .col.col-lg-8
                   =text_field_tag "order[quantity]"
 
@@ -43,10 +43,10 @@
                   =text_field_tag "order[email]"
               .row
                 .col.col-lg-4
-                  Ghi chu:
+                  Ghi Chú:
                 .col.col-lg-8
                   =text_area_tag "order[content]"
               .row
                 .col.col-lg-4 &nbsp;
                 .col.col-lg-8
-                  =submit_tag "Gui yeu cau",:class =>"art-button"
+                  =submit_tag "Gửi yêu cầu",:class =>"art-button"

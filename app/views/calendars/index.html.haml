@@ -9,7 +9,7 @@
             .left_content
               .small-menu
                 .header-text
-                  Danh Muc
+                  =t(".danh_muc")
                 .normal-menu  
                   - @categories.each do |i|
                     .menu-txt
@@ -17,7 +17,7 @@
                         =i.name
             .right_content
               %h1{:style =>"color: blue"}
-                Lich de ban
+                LỊCH ĐỂ BÀN
               %hr{:size => 1,:style =>"color: lightgray;margin: 1px 0px"}
                 
               .row

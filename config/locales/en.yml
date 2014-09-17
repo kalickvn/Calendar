@@ -17,6 +17,9 @@ en:
     organization: Organization
     my_organization: My organization
   search: Search
+  calendars:
+    index:
+      danh_muc: "Danh Mục"
   button:
     save: Save
     update: Update
