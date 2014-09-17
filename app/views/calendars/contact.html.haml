@@ -1,0 +1,42 @@
+.art-layout-cell.art-content
+  %article.art-post.art-article
+    %h2.art-postheader LIÊN HỆ
+    .art-postcontent.art-postcontent-0.clearfix{:style=>"background-color: white;border-radius: 12px;padding: 21px;"}
+      .art-content-layout.layout-item-0
+        .art-content-layout-row
+          .art-layout-cell.layout-item-1{:style => "width: 100%;color:black"}
+            = form_tag send_contact_calendars_path do |f|
+              .row
+                .col.col-lg-4
+                  Họ tên:
+                .col.col-lg-8
+                  =text_field_tag "contact[name]"
+              .row
+                .col.col-lg-4
+                  Công ty:
+                .col.col-lg-8
+                  =text_field_tag "contact[company]"
+              .row
+                .col.col-lg-4
+                  Điện Thoại:
+                .col.col-lg-8
+                  =text_field_tag "contact[phone]"
+              .row
+                .col.col-lg-4
+                  Email:
+                .col.col-lg-8
+                  =text_field_tag "contact[email]"
+              .row
+                .col.col-lg-4
+                  Chủ đề:
+                .col.col-lg-8
+                  =text_field_tag "contact[subject]"
+              .row
+                .col.col-lg-4
+                  Nội dung:
+                .col.col-lg-8
+                  =text_area_tag "contact[content]"
+              .row
+                .col.col-lg-4 &nbsp;
+                .col.col-lg-8
+                  =submit_tag "Send Email",:class =>"art-button"

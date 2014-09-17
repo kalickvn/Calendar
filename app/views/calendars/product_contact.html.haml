@@ -1,0 +1,52 @@
+%div{:style=>"height:5px"}
+.art-layout-cell.art-content
+  %article.art-post.art-article
+    / %h2.art-postheader Lich De ban
+    .art-postcontent.art-postcontent-0.clearfix{:style=>"background-color: white;border-radius: 12px;padding: 21px;"}
+      .art-content-layout.layout-item-0
+        .art-content-layout-row
+          .art-layout-cell.layout-item-1{:style => "width: 100%;color: black"}
+            %h1{:style =>"color: blue"}
+              Dat hang san pham
+            %hr{:size => 1,:style =>"color: lightgray;margin: 1px 0px"}
+            = form_tag send_product_contact_calendars_path do |f|
+              .row
+                .col.col-lg-4
+                  Ten san pham:
+                .col.col-lg-8
+                  Lich bloc
+              .row
+                .col.col-lg-4
+                  So Luong:
+                .col.col-lg-8
+                  =text_field_tag "order[quantity]"
+
+              .row
+                .col.col-lg-4
+                  Họ tên:
+                .col.col-lg-8
+                  =text_field_tag "order[customer_name]"
+              .row
+                .col.col-lg-4
+                  Công ty:
+                .col.col-lg-8
+                  =text_field_tag "order[company]"
+              .row
+                .col.col-lg-4
+                  Điện Thoại:
+                .col.col-lg-8
+                  =text_field_tag "order[phone]"
+              .row
+                .col.col-lg-4
+                  Email:
+                .col.col-lg-8
+                  =text_field_tag "order[email]"
+              .row
+                .col.col-lg-4
+                  Ghi chu:
+                .col.col-lg-8
+                  =text_area_tag "order[content]"
+              .row
+                .col.col-lg-4 &nbsp;
+                .col.col-lg-8
+                  =submit_tag "Gui yeu cau",:class =>"art-button"

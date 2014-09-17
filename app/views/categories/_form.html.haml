@@ -1,0 +1,17 @@
+=form_for @category do |f|
+  .row
+    .col.col-lg-4
+      Tên Loại:
+    .col.col-lg-8
+      =f.text_field :name
+  .row
+    .col.col-lg-4
+      Ghi chú:
+    .col.col-lg-8
+      =f.text_area_field :description
+  .row
+    .col.col-lg-4
+      Ghi chú:
+    .col.col-lg-8
+      =f.check_box :name
+    

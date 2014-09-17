@@ -1,0 +1,131 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  mailer:
+    from: "The Template Team <thuylc@elarion.com>"
+  project_name: "Lich tet- Lich van nien"
+  welcome: "Welcome!!!"
+  greeting:
+    hello: Hello
+    logout: Logout
+    login: Login
+  menu:
+    user_management: User Management
+    user_group_management: User Group Management
+    log: Log
+    organization: Organization
+    my_organization: My organization
+  search: Search
+  button:
+    save: Save
+    update: Update
+    change_password: "Change password"
+    cancel: Cancel
+    add: Add
+    add_user: Add User
+    add_user_group: Add Group
+    add_org: Add Org
+    sign_in: Sign in
+    send: Send
+    search: Search
+    resend: Resend
+  users:
+    name: List of Users
+    no_col: No.
+    full_name: Full Name
+    user_name: User Name
+    email: Email
+    status: Status
+    delete: Delete
+    enabled: Enabled
+    disabled: Disabled
+    title: "Title"
+    current_password: Current password
+    login:
+      user_name: "User Name:"
+      password: "Password:"
+    edit:
+      name: Edit User
+      user_name: User Name
+      first_name: First Name
+      last_name: Last Name
+      email: Email
+      groups: Groups
+      status: "Status:"
+      enable: Enabled
+      disable: Disabled
+      change_password:
+        name: Change Password
+        password: Password
+        retype: Password Confirmation
+      password_change_info: "(leave blank if you don't want to change it)"
+      current_password_info: "(we need your current password to confirm your changes)"
+    new:
+      user_name: User Name
+      name: New User
+      first_name: First Name
+      last_name: Last Name
+      email: Email
+      password: Password
+      password_confirmation: Password confirmation
+      groups: Groups
+      exist: Someone already has that user name. Try another?
+      email_exist: Email has already been taken. Try another?
+    destroy:
+      success: Delete user successful.
+  user_profile:
+    name: Edit User Profile
+    user_name: User Name
+    first_name: First Name
+    last_name: Last Name
+    email: Email
+    password: Password
+    password_confirm:
+    update_success: User Profile has updated.
+    exist: Someone already has that user name. Try another?
+    change_password:
+        name: Change Password
+        password: Password
+        retype: Password Confirmation
+  user_group:
+    list_name: List of Groups
+    new: New User Group
+    edit: Edit User Group
+    name: Group Name
+    description: Description
+    status: Status
+    status_enable: Enabled
+    status_disable: Disabled
+    exist: "Group Name has already existed . Try another?"
+    no_exist: "No group is existed"
+    dialog:
+      title: "Update users in group"
+      table_1: "Availabled Users"
+      table_2: "Selected Users"
+      add_items: " > "
+      remove_items: " < "
+      add_all_items: " >> "
+      remove_all_items: " << "
+  permission:
+    title: Permissions
+    no_exist: "No permission is existed"
+  logs:
+    list: "Action Logs"
+    date_from: "From:"
+    date_to: "To:"
+  time:
+    full_format: "%m/%d/%Y %H:%M:%S"
+    short_format: "%m/%d/%Y"
+  organization:
+    list: List of organizations
+    my_organization: My Organization
+    new: New Organization
+    edit: Edit Organization
+    description: Description
+    name: Organization Name
+    exist: "Organization Name has already existed . Try another?"
+    create_admin_org: Create an admin for organization
+
+
+

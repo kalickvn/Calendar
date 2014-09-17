@@ -1,0 +1,29 @@
+%div{:style=>"height:5px"}
+.art-layout-cell.art-content
+  %article.art-post.art-article
+    / %h2.art-postheader Lich De ban
+    .art-postcontent.art-postcontent-0.clearfix{:style=>"background-color: white;border-radius: 12px;padding: 21px;"}
+      .art-content-layout.layout-item-0
+        .art-content-layout-row
+          .art-layout-cell.layout-item-1{:style => "width: 100%"}
+            .left_content
+              .small-menu
+                .header-text
+                  Danh Muc
+                .normal-menu  
+                  - @categories.each do |i|
+                    .menu-txt
+                      %a{:href =>"#"}
+                        =i.name
+            .right_content
+              %h1{:style =>"color: blue"}
+                Lich de ban
+              %hr{:size => 1,:style =>"color: lightgray;margin: 1px 0px"}
+                
+              .row
+                -@list_calendars.each do |i|
+                  .col.col-lg-4
+                    =render :partial =>"shared/widget",:local =>{:calendar => i}
+              .row
+
+            .clear-fix              

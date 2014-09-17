@@ -1,0 +1,29 @@
+%center
+  %h2.small_format
+    = t('button.sign_in')
+  = form_for(resource, :as => resource_name, :url => user_session_path) do |f|
+    .new_form.small_format
+      - if flash[:alert]
+        %p(style="color: red")= flash[:alert]
+      .text_input
+        %div
+          = t('users.login.user_name')
+        .space
+        = f.text_field :username, :autofocus => true
+      .text_input
+        %div
+          = t('users.login.password')
+        .space
+        = f.password_field :password
+
+      - if devise_mapping.rememberable?
+        %div
+          %span
+            = f.check_box :remember_me
+            = f.label :remember_me,:style=>"display:inline"
+      .space
+      %div
+        = f.submit t('button.sign_in'),:class=>"btn_submit"
+      .space
+      = render "devise/shared/links"
+= javascript_include_tag "user"

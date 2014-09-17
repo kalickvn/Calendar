@@ -1,0 +1,24 @@
+%center
+  %h2.small_format
+    = t('devise.forgot_password.title')
+  = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
+    .new_form.small_format
+      .text_input
+        %div
+          = t('users.new.email')
+          %br
+          .description
+            = t('devise.forgot_password.info')
+        %div
+          = f.email_field :email, :autofocus => true
+        = devise_error_messages!
+        - if flash[:error]
+          .require
+            = flash[:error]
+          - flash.delete :error
+        %div
+          = recaptcha_tags({:ssl => request.ssl? , :display => {:theme => "clean"}})
+      %div
+        = f.submit t('button.send'),:class=>"btn_submit"
+        %input{:type=>"button",:value=> "Cancel",:class=>"btn_submit",:onclick=>"window.location = '#{root_url}'"}
+= javascript_include_tag "user"

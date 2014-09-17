@@ -1,0 +1,77 @@
+!!!
+%html{:dir => "ltr", :lang => "en-US"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "content-type"}/
+    %meta{:charset => "UTF-8"}/
+    %title= t(:project_name)
+    = analytics_init
+    / include style css
+    = stylesheet_link_tag "application"
+    = csrf_meta_tag
+    / include js file
+    = javascript_include_tag "application"
+    /[if lt IE 9] <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    =stylesheet_link_tag "style.css",:media =>"screen"
+    /[if lte IE 7] <link rel="stylesheet" href="style.ie7.css" media="screen" />
+    =stylesheet_link_tag "style.responsive.css",:media =>"all"
+    =stylesheet_link_tag "inline_home.css"
+    =stylesheet_link_tag "custom_template.css"
+  %body
+    #art-main
+      %header.art-header
+        
+        .art-shapes
+        %h1.art-headline{"data-left" => "10.58%"}
+          %a{:href => "#"} CTY IN ẤN LỊCH
+        %nav.art-nav
+          %ul.art-hmenu
+            %li
+              %a.active{:href => "#{root_path}"} TRANG CHỦ
+            %li
+              %a{:href => "#{introduction_home_index_path}"} GIỚI THIỆU
+            %li
+              %a{:href => "hotel-guide.html"} BÁO GIÁ IN ẤN
+            %li
+              %a{:href => "cars.html"} KHUYẾN MÃI
+            %li
+              %a{:href => "our-destinations.html"} LỊCH MỚI
+            %li
+              %a{:href => "vacations.html"} LỊCH HOT
+            %li
+              %a{:href => "#{contact_calendars_path}"} LIÊN HỆ
+      .banner_header
+      .art-sheet.clearfix
+        .art-layout-wrapper
+          .art-content-layout
+            .art-content-layout-row
+              .art-layout-cell.art-content
+                =yield
+        %footer.art-footer
+          .art-content-layout
+            .art-content-layout-row
+              .art-layout-cell{:style => "width: 77%"}
+                %p
+                  %a{:href => "#"}> Trang Chủ 
+                  \&nbsp;&nbsp; | &nbsp;&nbsp;
+                  %a{:href => "#"}> Lịch tết
+                  \&nbsp;&nbsp; | &nbsp;&nbsp;
+                  %a{:href => "#"}> Lịch bloc
+                  \&nbsp; &nbsp;| &nbsp;&nbsp;
+                  %a{:href => "#"}> Lịch tự chọn
+                  \&nbsp; &nbsp;| &nbsp;&nbsp;
+                  %a{:href => "#"}> Liên hệ
+                  \&nbsp; &nbsp;| &nbsp;&nbsp;
+                  %a{:href => "#"}> Chi nhánh
+                  \&nbsp; &nbsp;| &nbsp;&nbsp;
+                  %a{:href => "#"} Chính sách
+                %p Lich © 2013. All Rights Reserved.
+              .art-layout-cell.layout-item-0{:style => "width: 23%"}
+                %p
+                  \&nbsp;
+                  %a.art-facebook-tag-icon{:href => "", :style => "line-height: 32px;"}>
+                  \&nbsp; &nbsp;
+                  %a.art-twitter-tag-icon{:href => "", :style => "line-height: 32px;"}>
+                  \&nbsp; &nbsp;
+                  %a.art-rss-tag-icon{:href => "", :style => "line-height: 34px;"}>
+                  \&nbsp;
+                  %br/

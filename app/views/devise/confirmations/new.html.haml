@@ -1,0 +1,17 @@
+%center
+  %h2.small_format
+    = t('devise.confirm.resend_title')
+  = form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f|
+    .new_form.small_format
+      = devise_error_messages!
+      .text_input
+        %div
+          = t('users.new.email')
+        = f.email_field :email, :autofocus => true   
+      %div
+        = recaptcha_tags({:ssl => request.ssl? , :display => {:theme => "clean"}})     
+      %div
+        = f.submit t('button.resend'),:class=>"btn_submit"
+        %br
+        = render "devise/shared/links" 
+
