@@ -108,4 +108,7 @@ if ENV['RAILS_ENV'] == "test"
   }]
 
   User.create(users)
+
+  cate1 = Category.create({:name => "Lich Tet",:description =>"TTTTTTTTTtttt",:is_show_menu => true,:order_no =>1})
+  calendar = Calendar.create({:name => "Calendar 1",:paper_type => "123123",:box_type => "1231231",:category_id => cate1.id,:is_deleted => false,:description =>"asd"})
 end
