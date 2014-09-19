@@ -33,8 +33,8 @@
 .paginate_button.last{border-radius: 0 3px 3px 0;border-right-width:1px;}
 .dataTables_wrapper th{position: relative;cursor: pointer;outline: 0}
 .dataTables_wrapper th:after{font-family: FontAwesome; color: black;position: absolute;right: 10px;font-weight: normal;}
-.dataTables_wrapper .sorting:after{content: "\f0dc";color: black;}
-.dataTables_wrapper .sorting_asc:after{content: "\f0de";}
+.dataTables_wrapper .sorting:after{color: black;}
+.dataTables_wrapper .sorting_asc:after{}
 .dataTables_wrapper .sorting_desc:after{content: "\f0dd";}
 .panel .table td, .panel .table th{padding:6px 15px;border-top: 1px solid #63C1D8;border-right: 1px solid #63C1D8;text-overflow:ellipsis;overflow: hidden;white-space: nowrap;}
 .panel .table-striped > tbody > tr:nth-child(odd) > td, .panel .table-striped > tbody > tr:nth-child(odd) > th {background-color: #fcfdfe;}

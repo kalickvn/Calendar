@@ -1,4 +1,11 @@
 =form_for @category do |f|
+  - if @category.errors.any?
+    .alert.alert-error
+      %div.head-error Error creating your new Category. Please correct the following errors
+      %div.content-error
+        %ul{:style => "list-style:none; padding:10px 10px 10px 10px;"}
+          - for message in @category.errors.full_messages
+            %li.li-error= message
   .row
     .col.col-lg-4
       Tên Loại:
@@ -8,7 +15,7 @@
     .col.col-lg-4
       Ghi chú:
     .col.col-lg-8
-      =f.text_area_field :description
+      =f.text_area :description,:rows =>3
   .row
     .col.col-lg-4
       Hiển thị trên menu:
@@ -16,7 +23,7 @@
       =f.check_box :is_show_menu
   .row
     .col.col-lg-4
-      Hiển thị trên menu:
+      Thứ tự:
     .col.col-lg-8
       =f.text_field :order_no
   .row

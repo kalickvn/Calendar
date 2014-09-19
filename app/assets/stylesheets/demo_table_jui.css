@@ -126,8 +126,9 @@ table.display thead th div.DataTables_sort_wrapper span {
 }
 
 .dataTables_length {
-	width: 40%;
+	/*width: 40%;*/
 	float: left;
+	color: black;
 }
 
 .dataTables_filter {

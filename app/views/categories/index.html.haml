@@ -1,1 +1,7 @@
-%table{:cellpadding=>"0",cellspacing=>"0",:class=>"table table-striped dataTable group-service-dataTable custom_datatable",:style=>"width:100%",:id =>"categories_list"}
+=javascript_include_tag "category"
+%div
+  %a.btn.btn-primary{:href=>"#{new_category_path}"}
+    Thêm mới
+
+%div
+%table{:cellpadding=>"0",:cellspacing=>"0",:class=>"table table-striped dataTable group-service-dataTable custom_datatable",:style=>"width:100%",:id =>"categories_list"}

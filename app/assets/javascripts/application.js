@@ -24,6 +24,8 @@
 //= require slider/jssor.core
 //= require slider/jssor.utils
 //= require slider/jssor.slider
+//= require accounting.min
+//= require common
 $.fn.dataTableExt.oApi.fnReloadAjax = function(oSettings, sNewSource, fnCallback, bStandingRedraw) {
   if (sNewSource !== undefined && sNewSource !== null) {
     oSettings.sAjaxSource = sNewSource;

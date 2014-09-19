@@ -16,4 +16,8 @@
  *= require custom_table
  *= require custom_layout
  *= require custom_widget
+ *= require plugin
+ *= require custome_datatable
+
+
  */

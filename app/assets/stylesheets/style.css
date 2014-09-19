@@ -306,7 +306,7 @@ body
    padding: 0;
    margin:0;
    min-width: 970px;
-   color: #D2DBE4;
+   /*color: #D2DBE4;*/
 }
 
 .art-header:before, #art-header-bg:before, .art-layout-cell:before, .art-layout-wrapper:before, .art-footer:before, .art-nav:before, #art-hmenu-bg:before, .art-sheet:before
