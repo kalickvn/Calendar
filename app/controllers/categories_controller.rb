@@ -26,7 +26,7 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new(params["category"])
     if @category.save
-      redirect_to @category, :notice => "Successfully created ad listing."
+      redirect_to categories_path, :notice => "Successfully created ad listing."
     else
       render :action => 'new'
     end
@@ -35,5 +35,13 @@ class CategoriesController < ApplicationController
   def update
     
   end
-
+  
+  def destroy
+    if request.xhr?
+      cate = Category.find(params[:id])
+      return :json =>{"status" => "failed"} if cate.blank?
+      cate.destroy
+      return :json =>{"status" => "ok"}
+    end
+  end
 end
