@@ -43,9 +43,8 @@ HelloWorld::Application.configure do
     :domain               => "gmail.com",
     :user_name            => "kalickvn2@gmail.com",
     :password             => "1qazxsw2kalickvn",
-    :authentication       => "plain",
+    :authentication       => :plain,
     :from                 => "kalickvn2@gmail.com",
-    :tls                  => true,
     :enable_starttls_auto => true
   }
   Paperclip.options[:command_path] = "/usr/bin"
