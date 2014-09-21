@@ -1,0 +1,52 @@
+=nested_form_for @calendar, :html => { :class => 'form-horizontal', multipart: true } do |f|
+  - if @calendar.errors.any?
+    .alert.alert-error
+      %div.head-error Error creating your new Category. Please correct the following errors
+      %div.content-error
+        %ul{:style => "list-style:none; padding:10px 10px 10px 10px;"}
+          - for message in @calendar.errors.full_messages
+            %li.li-error= message
+  .row
+    .col.col-lg-4
+      Tên sản phẩm:
+    .col.col-lg-8
+      =f.text_field :name
+  .row
+    .col.col-lg-4
+      Mô tả:
+    .col.col-lg-8
+      =f.text_area :description,:rows =>3
+  .row
+    .col.col-lg-4
+      Loại lịch:
+    .col.col-lg-8
+      =f.select :category_id, Category.all.collect {|p| [ p.name, p.id ] }, { include_blank: true,:selected =>f.object.category_id }
+  .row
+    .col.col-lg-4
+      Loại giấy:
+    .col.col-lg-8
+      =f.text_field :paper_type
+  .row
+    .col.col-lg-4
+      Loại hộp:
+    .col.col-lg-8
+      =f.text_field :box_type
+  .row
+    .col.col-lg-4
+      Hình ảnh:
+    .col.col-lg-8
+      = f.fields_for :photos do |photo|  
+        - if photo.object.new_record?
+          / = file_field_tag "images[]", type: :file, multiple: true 
+          = photo.file_field(:image)
+          /link_to "remove", '#', class: "remove_fields button button-small button-red"
+        - else
+          = photo.object.image.url(:thumb)
+          = image_tag(photo.object.image.url(:thumb)) 
+          = photo.hidden_field :_destroy
+          = photo.link_to_remove "Xóa"
+      =f.link_to_add "Add photo", :photos
+  .row
+    .col.col-lg-4 &nbsp;
+    .col.col-lg-8
+      =f.submit "Lưu"

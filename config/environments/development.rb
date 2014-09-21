@@ -14,7 +14,7 @@ HelloWorld::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
@@ -37,14 +37,14 @@ HelloWorld::Application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { :host => '192.168.10.58:3000' }
   config.action_mailer.smtp_settings = {
-    :address              => "mail.elarion.com",
-    :port                 => 25,
-    :domain               => "elarion.com",
-    :user_name            => "thuylc@elarion.com",
-    :password             => "1qazxsw2",
-    :authentication       => "login",
+    :address              => "smtp.google.com",
+    :port                 => 587,
+    :domain               => "gmail.com",
+    :user_name            => "kalickvn2@gmail.com",
+    :password             => "1qazxsw2kalickvn",
+    :authentication       => "plain",
     :from                 => I18n.t('mailer.from'),
     :enable_starttls_auto => true
   }
-
+  Paperclip.options[:command_path] = "/usr/bin"
 end

@@ -32,6 +32,8 @@ en:
   confirm_change_group_status: "Do you want change?"
   group_name_required: "Please enter group name."
   description_require: "Please enter description."
+  datatable:
+    no_record: "Không có dữ liệu."
   user_management:
     j_user_name: "User Name"
     j_full_name: "Full Name"

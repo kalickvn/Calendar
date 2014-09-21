@@ -44,7 +44,8 @@ gem "quiet_assets"
 gem 'thin'
 gem 'public_activity'
 gem "recaptcha", :require => "recaptcha/rails"
-
+gem "paperclip", "~> 4.2"
+gem "nested_form"
 # Used to async sending emails for devise
 gem "devise-async"
 # To use ActiveModel has_secure_password

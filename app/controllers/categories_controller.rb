@@ -20,28 +20,33 @@ class CategoriesController < ApplicationController
   end
 
   def edit
-    @category = Category.new
+    @category = Category.find(params[:id])
   end
 
   def create
     @category = Category.new(params["category"])
     if @category.save
-      redirect_to categories_path, :notice => "Successfully created ad listing."
+      redirect_to categories_path, :notice => "Successfully created category."
     else
       render :action => 'new'
     end
   end
 
   def update
-    
+    @category = Category.find(params[:id])
+    if @category.update_attributes(params["category"])
+      redirect_to categories_path, :notice => "Successfully update ad listing."
+    else
+      render :action => 'edit'
+    end
   end
   
   def destroy
     if request.xhr?
       cate = Category.find(params[:id])
-      return :json =>{"status" => "failed"} if cate.blank?
+      render :json =>{"status" => "failed"} if cate.blank?
       cate.destroy
-      return :json =>{"status" => "ok"}
+      render :json =>{"status" => "ok"}
     end
   end
 end

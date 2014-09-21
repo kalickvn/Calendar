@@ -1,0 +1,61 @@
+%div{:style=>"height:5px"}
+.art-layout-cell.art-content
+  %article.art-post.art-article
+    / %h2.art-postheader Lich De ban
+    .art-postcontent.art-postcontent-0.clearfix{:style=>"background-color: white;border-radius: 12px;padding: 21px;"}
+      .art-content-layout.layout-item-0
+        .art-content-layout-row
+          .art-layout-cell.layout-item-1{:style => "width: 100%;color: black"}
+            %h1{:style =>"color: blue"}
+              Đặt hàng sản phẩm
+            %hr{:size => 1,:style =>"color: lightgray;margin: 1px 0px"}
+            = form_for(@order,:url => orders_path(:calendar_id => params[:calendar_id]))  do |f|
+              .row
+                .col.col-lg-12
+                  - if @order.errors.any?
+                    .alert.alert-error
+                      %div.head-error Có lỗi xảy ra. Vui lòng sửa lại các phần bị sai sau:
+                      %div.content-error
+                        %ul{:style => "list-style:none; padding:10px 10px 10px 10px;"}
+                          - for message in @order.errors.full_messages
+                            %li.li-error= message
+              .row
+                .col.col-lg-4
+                  Tên sản phẩm:
+                .col.col-lg-8.product-name-bold
+                  =@calendar.name
+              .row
+                .col.col-lg-4
+                  Số lượng:
+                .col.col-lg-8
+                  =f.number_field :quantity,:style =>"width:100% ",:step => 1
+
+              .row
+                .col.col-lg-4
+                  Họ tên:
+                .col.col-lg-8
+                  =f.text_field :name
+              .row
+                .col.col-lg-4
+                  Công ty:
+                .col.col-lg-8
+                  =f.text_field :note
+              .row
+                .col.col-lg-4
+                  Điện Thoại:
+                .col.col-lg-8
+                  =f.text_field :phone
+              .row
+                .col.col-lg-4
+                  Email:
+                .col.col-lg-8
+                  =f.text_field :email
+              .row
+                .col.col-lg-4
+                  Ghi Chú:
+                .col.col-lg-8
+                  =f.text_area :note,:rows =>5
+              .row
+                .col.col-lg-4 &nbsp;
+                .col.col-lg-8
+                  =submit_tag "Gửi yêu cầu",:class =>"art-button"

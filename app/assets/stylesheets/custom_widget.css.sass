@@ -1,3 +1,8 @@
+input[type="text"], input[type="password"], input[type="email"], input[type="url"], textarea
+  border-radius: 0px !important
+.art-button
+  font-weight: bold !important  
+
 .left_content
   width: 19%
   float: left
@@ -11,7 +16,7 @@
   margin-right: 5px
   .header-text
     background-color: gray
-    height: 26px
+    height: 30px
     vertical-align: middle
     line-height: 26px
     text-align: center
@@ -19,9 +24,13 @@
     border-top-right-radius: 5px
     font-weight: bold
     font-size: 17px
+    padding-top: 4px
+    color: white
   .normal-menu
     border: 1px solid lightgray
     padding-left: 5px
+    .art-button
+      font-weight: bold !important
 .left-side
   float: left
   width: 70%
@@ -39,7 +48,8 @@
     border: 1px solid lightgray
     border-radius: 5px
     .widget-image
-      height: 180px
+      max-height: 180px
+      min-height: 106px
       img
         max-width: 100%
         max-height: 100%
@@ -52,3 +62,7 @@
       text-align: right
     .more_info a
       text-decoration: none
+      color: orange !important
+    .sm-text
+      font-size: 10px
+      margin-top: -5px

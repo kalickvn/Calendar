@@ -26,6 +26,7 @@
 //= require slider/jssor.slider
 //= require accounting.min
 //= require common
+//= require jquery_nested_form
 $.fn.dataTableExt.oApi.fnReloadAjax = function(oSettings, sNewSource, fnCallback, bStandingRedraw) {
   if (sNewSource !== undefined && sNewSource !== null) {
     oSettings.sAjaxSource = sNewSource;

@@ -1,8 +1,8 @@
-var g_category_path = "/categories/";
+var g_category_path = "/calendars/admin";
 var g_displayLength = 10;
-var Category = {
+var Calendar = {
   getdata: function(){
-    var table = $("#categories_list").dataTable({
+    var table = $("#calendars_list").dataTable({
       sDom: '<"#tbhead"<"row"<"col col-lg-6 col-offset-6"f>>>rt<"#tbfoot"<"row"<"col col-lg-6"l><"col col-lg-6"p>>>',
         "bFilter": false,
         "bLengthChange": true,
@@ -20,33 +20,31 @@ var Category = {
         "iDisplayLength": 5,
         "aaSorting": [[ 0, "asc" ]],
         "aoColumns": [
-          { "sTitle": "Loaị lịch",
+          { "sTitle": "Tên lịch",
             "sClass": "left",
             'bSortable': true,
             "sWidth": "20%",
             "mData": "name",
             "sClass": "left-round"
           },
-          { "sTitle": "Mô tả",
+          { "sTitle": "Kích thước",
             "sClass": "left",
             'bSortable': true,
             "sWidth": "30%",
-            "mData": "description"
+            "mData": "size"
             
           },
-          { "sTitle": "Hiển thị menu",
+          { "sTitle": "Loại lịch",
             "sClass": "left",
             'bSortable': true,
             "sWidth": "20%",
-            "mData": "is_show_menu",
-            "mRender": Common.render_yes_no
+            "mData": "description"
           },
-          { "sTitle": "Thứ tự",
+          { "sTitle": "Mô tả",
             "sClass": "right",
             'bSortable': true,
             "sWidth": "10%",
-            "mData": "order_no",
-            "mRender": Common.render_number,
+            "mData": "category_name",
             "sClass": "right-round last-column"
           },
           { "sTitle": "",
@@ -54,7 +52,7 @@ var Category = {
             'bSortable': true,
             "sWidth": "20%",
             "mData": "id",
-            "mRender": Category.render_action,
+            "mRender": Calendar.render_action,
             "sClass": "right-round last-column"
           }
           ],
@@ -72,16 +70,16 @@ var Category = {
       });
   },
   render_action: function(obj){
-    btn_view = '<a class="action-link" href="categories/' + obj +'/edit" class="action-link">Chỉnh sửa </a>';
-    btn_delete = ' <a class="action-link" onclick="Category.delete_category('+ obj +')">' + 'Xóa' +'</a>';
+    btn_view = '<a class="action-link" href="/calendars/' + obj +'/edit" class="action-link">Chỉnh sửa </a>';
+    btn_delete = ' <a class="action-link" onclick="Calendar.delete_calendar('+ obj +')">' + 'Xóa' +'</a>';
     return btn_view + btn_delete;
   },
-  delete_category: function(id){
+  delete_calendar: function(id){
   var message = "Bạn có chắc muốn xóa ";
-  var confirm = Category.showConfirm(message, "");
+  var confirm = Calendar.showConfirm(message, "");
   if(confirm){
     $.ajax({
-      url:  "/categories/" + id,
+      url:  "/calendars/" + id,
       type: 'DELETE',
       data: {
         id: id,
@@ -90,7 +88,7 @@ var Category = {
 
     }).done(function(){
       //
-      $("#categories_list").dataTable().fnReloadAjax();
+      $("#calendars_list").dataTable().fnReloadAjax();
     });
   }
 
@@ -105,5 +103,5 @@ showConfirm: function(message,obj){
 
 }
 $(document).ready(function(){
-  Category.getdata();
+  Calendar.getdata();
 });

@@ -7,6 +7,15 @@
           .art-layout-cell.layout-item-1{:style => "width: 100%;color:black"}
             = form_tag send_contact_calendars_path do |f|
               .row
+                .col.col-lg-12
+                  - unless @flash.blank?
+                    .alert.alert-error
+                      %div.head-error Có lỗi xảy ra. Vui lòng sửa lại các phần bị sai sau:
+                      %div.content-error
+                        %ul{:style => "list-style:none; padding:10px 10px 10px 10px;"}
+                          - @flash.each do |i|
+                            %li.li-error= i
+              .row
                 .col.col-lg-4
                   Họ tên:
                 .col.col-lg-8

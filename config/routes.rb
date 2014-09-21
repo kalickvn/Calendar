@@ -7,6 +7,7 @@ HelloWorld::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
   resources :categories
+  resources :orders
   resources :organizations do
     resources :users
 
@@ -22,7 +23,8 @@ HelloWorld::Application.routes.draw do
     get "contact",:on => :collection
     post "send_contact",:on => :collection
     get "product_contact"
-    post "send_product_contact",:on =>:collection
+    get "send_product_contact",:on =>:collection
+    get "admin",:on =>:collection
   end
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.

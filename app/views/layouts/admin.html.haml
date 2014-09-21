@@ -57,11 +57,11 @@
                                   .menu-txt
                                     %a{:href =>"/categories"} Quản lý Loại lịch
                                   .menu-txt
-                                    %a{:href =>"/calendars"} Quản lý danh sách Lịch
+                                    %a{:href =>"/calendars/admin"} Quản lý danh sách sản phẩm
+                                  .menu-txt
+                                    %a{:href =>"#{organization_users_path(1)}"} Quản lý người dùng
                             .right_content
-                              %h1{:style =>"color: blue"}
-                                Danh sách loại lịch
-                              %hr{:size => 1,:style =>"color: lightgray;margin: 1px 0px"}
+                              
                               =yield
                             .clear-fix{:style =>"clear:both"}
         %footer.art-footer

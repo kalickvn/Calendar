@@ -9,43 +9,52 @@
             %h1{:style =>"color: blue"}
               Đặt hàng sản phẩm
             %hr{:size => 1,:style =>"color: lightgray;margin: 1px 0px"}
-            = form_tag send_product_contact_calendars_path do |f|
+            = form_for @order  do |f|
+              .row
+                .col.col-lg-12
+                  - if @order.errors.any?
+                    .alert.alert-error
+                      %div.head-error Error creating your new request. Please correct the following errors
+                      %div.content-error
+                        %ul{:style => "list-style:none; padding:10px 10px 10px 10px;"}
+                          - for message in @order.errors.full_messages
+                            %li.li-error= message
               .row
                 .col.col-lg-4
                   Tên sản phẩm:
-                .col.col-lg-8
-                  Lich bloc
+                .col.col-lg-8.product-name-bold
+                  =@calendar.name
               .row
                 .col.col-lg-4
                   Số lượng:
                 .col.col-lg-8
-                  =text_field_tag "order[quantity]"
+                  =f.number_field :quantity,:style =>"width:100% ",:step => 1
 
               .row
                 .col.col-lg-4
                   Họ tên:
                 .col.col-lg-8
-                  =text_field_tag "order[customer_name]"
+                  =f.text_field :name
               .row
                 .col.col-lg-4
                   Công ty:
                 .col.col-lg-8
-                  =text_field_tag "order[company]"
+                  =f.text_field :note
               .row
                 .col.col-lg-4
                   Điện Thoại:
                 .col.col-lg-8
-                  =text_field_tag "order[phone]"
+                  =f.text_field :phone
               .row
                 .col.col-lg-4
                   Email:
                 .col.col-lg-8
-                  =text_field_tag "order[email]"
+                  =f.text_field :email
               .row
                 .col.col-lg-4
                   Ghi Chú:
                 .col.col-lg-8
-                  =text_area_tag "order[content]"
+                  =f.text_area :note,:rows =>5
               .row
                 .col.col-lg-4 &nbsp;
                 .col.col-lg-8

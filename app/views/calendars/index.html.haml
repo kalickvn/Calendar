@@ -11,19 +11,19 @@
                 .header-text
                   =t(".danh_muc")
                 .normal-menu  
-                  - @categories.each do |i|
-                    .menu-txt
-                      %a{:href =>"#"}
-                        =i.name
+                  / - @categories.each do |i|
+                  /   .menu-txt
+                  /     %a{:href =>"#"}
+                  /       =i.name
             .right_content{:style=>"width:100%"}
               %h1{:style =>"color: blue"}
-                LỊCH ĐỂ BÀN
+                = @categories.name.upcase
               %hr{:size => 1,:style =>"color: lightgray;margin: 1px 0px"}
                 
               .row
                 -@list_calendars.each do |i|
                   .col.col-lg-3
-                    =render :partial =>"shared/widget",:local =>{:calendar => i}
+                    =render :partial =>"shared/widget",:locals =>{:calendar => i}
               .row
-
+                =will_paginate(@list_calendars)
             .clear-fix              

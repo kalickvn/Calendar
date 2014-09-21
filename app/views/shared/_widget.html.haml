@@ -1,13 +1,17 @@
-.custom-widget.div-a{:onclick =>"window.location='#{calendar_path(1)}'"}
+.custom-widget.div-a{:onclick =>"window.location='#{calendar_path(calendar.id)}'"}
   .widget-content
     .widget-image
-      %img{:src=>"assets/img_lich/lich_bloc.jpg"}
+      %img{:src=>"#{render_first_photo(calendar.photos)}"}
     .widget-text
-      .elip-text
-        Vào những dịp cuối năm thì món quà...
-      .elip-text
-        Kích thước:: 120 x 120
-      .elip-text
-        Loại Giấy: Carton
+      .elip-text{:style =>"font-weight:bold"}
+        = calendar.name.truncate(40)
+      .elip-text.sm-text
+        = calendar.description.truncate(40)
+      .elip-text.sm-text
+        Kích thước:
+        = calendar.size
+      .elip-text.sm-text
+        Loại Giấy: 
+        = calendar.paper_type
       .more_info
-        %a{:href => "#{calendar_path(1)}"} Chi tiết >>
+        %a{:href => "#{calendar_path(calendar.id)}"} Chi tiết >>

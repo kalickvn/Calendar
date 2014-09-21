@@ -11,20 +11,23 @@
             %hr{:size => 1,:style =>"color: lightgray;margin: 1px 0px"}
             .content-show
               .left-side.slide_thuy
-                =render :partial =>"shared/detail_slider"
+                =render :partial =>"shared/detail_slider",:locals =>{:calendar => @calendar}
               .right-side
                 .small-menu
                   .header-text
                     Thông số sản phẩm
                   .normal-menu{:style=>"color:black"}
                     %div
-                      Kích thước: 120x 120
+                      Kích thước:
+                      =@calendar.size
                     %div
-                      Loại Giấy: corton
+                      Loại Giấy: 
+                      =@calendar.paper_type
                     %div
-                      Bao bì:  Không 
+                      Bao bì:  
+                      =@calendar.box_type
                     %div
-                      %a.art-button{:href=>"#{calendar_product_contact_path(1)}"}
+                      %a.art-button{:href=>"#{new_order_path(:calendar_id => @calendar.id)}"}
                         Đặt Hàng
                     %div{:style=>"height:10px"}
 
