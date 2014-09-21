@@ -35,15 +35,17 @@ HelloWorld::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { :host => '192.168.10.58:3000' }
+  config.action_mailer.default_url_options = { :host => '74.207.248.100:8808' }
+  config.action_mailer.perform_deliveries = true
   config.action_mailer.smtp_settings = {
-    :address              => "smtp.google.com",
+    :address              => "smtp.gmail.com",
     :port                 => 587,
     :domain               => "gmail.com",
     :user_name            => "kalickvn2@gmail.com",
     :password             => "1qazxsw2kalickvn",
     :authentication       => "plain",
-    :from                 => I18n.t('mailer.from'),
+    :from                 => "kalickvn2@gmail.com",
+    :tls                  => true,
     :enable_starttls_auto => true
   }
   Paperclip.options[:command_path] = "/usr/bin"
