@@ -134,6 +134,9 @@ en:
       order:
         name: "Họ và tên "
         phone: "Số điện thoại"
+      calendar:
+        name: "Tên sản phẩm "
+        category_id: "Loại lịch"
 
 
 

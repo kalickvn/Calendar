@@ -24,6 +24,18 @@
 //= require slider/jssor.core
 //= require slider/jssor.utils
 //= require slider/jssor.slider
+
+
+//= require slider/js/modernizr
+//= require slider/js/jquery.flexslider
+//= require slider/js/shCore
+//= require slider/js/shBrushXml
+//= require slider/js/shBrushJScript
+//= require slider/js/jquery.easing
+//= require slider/js/jquery.mousewheel
+
+
+
 //= require accounting.min
 //= require common
 //= require jquery_nested_form

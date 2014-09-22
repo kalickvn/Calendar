@@ -33,7 +33,7 @@
       -calendar.photos.each do |i|
         %div
           %img{:src => "#{i.image.url(:original)}", :u => "image"}/
-          %img{:src => "#{i.image.url(:thumb)}", :u => "thumb"}/
+          %img{:src => "#{i.image.url(:thumb)}",:width => "72px", :height =>"72px", :u => "thumb"}/
     / %div
     /   %img{:src => "assets/slider/alila/08.jpg", :u => "image"}/
     /   %img{:src => "assets/slider/alila/thumb-08.jpg", :u => "thumb"}/

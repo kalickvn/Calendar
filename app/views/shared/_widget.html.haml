@@ -6,7 +6,7 @@
       .elip-text{:style =>"font-weight:bold"}
         = calendar.name.truncate(40)
       .elip-text.sm-text
-        = calendar.description.truncate(40)
+        = calendar.description.blank? ? "&nbsp;".html_safe : calendar.description.truncate(40).to_s
       .elip-text.sm-text
         Kích thước:
         = calendar.size

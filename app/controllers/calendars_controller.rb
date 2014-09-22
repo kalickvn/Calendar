@@ -82,7 +82,7 @@ class CalendarsController < ApplicationController
 
   def update
     @gallery = Calendar.find(params[:id])
-    if @gallery.save
+    if @gallery.update_attributes(params[:calendar])
       if params[:images]
           params[:images].each { |image|
             @gallery.photos.create(image: image)

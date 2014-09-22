@@ -17,7 +17,7 @@ var Calendar = {
           "sZeroRecords": I18n.t('datatable.no_record'),
           "sSearch": I18n.t('datatable.search'),
         },
-        "iDisplayLength": 5,
+        "iDisplayLength": g_displayLength,
         "aaSorting": [[ 0, "asc" ]],
         "aoColumns": [
           { "sTitle": "Tên lịch",
@@ -27,20 +27,20 @@ var Calendar = {
             "mData": "name",
             "sClass": "left-round"
           },
-          { "sTitle": "Kích thước",
-            "sClass": "left",
-            'bSortable': true,
-            "sWidth": "30%",
-            "mData": "size"
+          // { "sTitle": "Kích thước",
+          //   "sClass": "left",
+          //   'bSortable': true,
+          //   "sWidth": "30%",
+          //   "mData": "size"
             
-          },
-          { "sTitle": "Loại lịch",
+          // },
+          { "sTitle": "Mô tả",
             "sClass": "left",
             'bSortable': true,
             "sWidth": "20%",
             "mData": "description"
           },
-          { "sTitle": "Mô tả",
+          { "sTitle": "Loại lịch",
             "sClass": "right",
             'bSortable': true,
             "sWidth": "10%",

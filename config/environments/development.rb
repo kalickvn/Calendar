@@ -39,7 +39,6 @@ HelloWorld::Application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.default :charset => "utf-8"
   config.action_mailer.smtp_settings = {
-    :tls => true,
     :address              => "smtp.gmail.com",
     :port                 => 587,
     :domain => "gmail.com",
