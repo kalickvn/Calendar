@@ -31,9 +31,9 @@
             %li
               %a{:href => "#{introduction_home_index_path}"} GIỚI THIỆU
             %li
-              %a{:href => "#"} LỊCH THIẾT KẾ CATALOGUE
+              %a{:href => "#{calendars_path(:category_id =>6)}"} LỊCH THIẾT KẾ CATALOGUE
             %li
-              %a{:href => "#"} LỊCH THIẾT KẾ ĐỘC QUYỀN
+              %a{:href => "#{calendars_path(:category_id =>5)}"} LỊCH THIẾT KẾ ĐỘC QUYỀN
             %li
               %a{:href => "#"} BẢNG GIÁ
             %li
@@ -50,7 +50,7 @@
             .art-content-layout-row
               .art-layout-cell{:style => "width: 77%"}
                 %p
-                  %a{:href => "#"}> Trang Chủ 
+                  %a{:href => "#{root_path}"}> Trang Chủ 
                   \&nbsp;&nbsp; | &nbsp;&nbsp;
                   %a{:href => "#"}> Lịch tết
                   \&nbsp;&nbsp; | &nbsp;&nbsp;

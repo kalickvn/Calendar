@@ -60,6 +60,10 @@
                                     %a{:href =>"/calendars/admin"} Quản lý danh sách sản phẩm
                                   .menu-txt
                                     %a{:href =>"#{organization_users_path(1)}"} Quản lý người dùng
+                                  .menu-txt
+                                    %a{:href =>"#{organization_users_path(1)}"} Quản lý trang 
+                                  .menu-txt
+                                    = link_to "Đăng xuất", destroy_user_session_path, :method =>'delete'
                             .right_content
                               
                               =yield
