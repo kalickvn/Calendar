@@ -1,0 +1,27 @@
+- if params[:success]
+  %div{:style =>"color:green"}
+    Cấu hình hệ thống đã được cập nhật thành công.
+=form_tag(setting_path,:method =>:put) do |f|
+  - if @flash && !@flash[:errors].blank?
+    .alert.alert-error
+      %div.head-error Error updating settings. Please correct the following errors
+      %div.content-error
+        %ul{:style => "list-style:none; padding:10px 10px 10px 10px;"}
+          - @flash[:errors].each do |i|
+            %li.li-error= i
+  .row
+    .col.col-lg-4
+      Tin Khuyến mãi:
+    .col.col-lg-8
+      =text_area_tag "setting[promotion]",@text_setting ? @text_setting.value : ""
+  .row
+    .col.col-lg-4
+      Email hệ thống:
+    .col.col-lg-8
+      =text_field_tag "setting[email]",@email_setting ? @email_setting.value : ""
+  .row
+    .col.col-lg-4
+      &nbsp;
+    .col.col-lg-8
+      =submit_tag "Lưu",:class=>"art-button"
+  

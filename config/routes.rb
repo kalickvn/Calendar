@@ -6,6 +6,7 @@ HelloWorld::Application.routes.draw do
   #end
   # The priority is based upon order of creation:
   # first created -> highest priority.
+  resources :settings
   resources :categories
   resources :orders
   resources :organizations do

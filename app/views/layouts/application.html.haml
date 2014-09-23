@@ -27,17 +27,17 @@
         %nav.art-nav
           %ul.art-hmenu
             %li
-              %a.active{:href => "#{root_path}"} TRANG CHỦ
+              %a.trang-chu{:href => "#{root_path}"} TRANG CHỦ
             %li
-              %a{:href => "#{introduction_home_index_path}"} GIỚI THIỆU
+              %a.gioi-thieu{:href => "#{introduction_home_index_path}"} GIỚI THIỆU
             %li
-              %a{:href => "#{calendars_path(:tag_type => 1)}"} LỊCH THIẾT KẾ CATALOGUE
+              %a.tk-catalog{:href => "#{calendars_path(:tag_type => 1)}"} LỊCH THIẾT KẾ CATALOGUE
             %li
-              %a{:href => "#{calendars_path(:tag_type =>2)}"} LỊCH THIẾT KẾ ĐỘC QUYỀN
+              %a.tk-docquyen{:href => "#{calendars_path(:tag_type =>2)}"} LỊCH THIẾT KẾ ĐỘC QUYỀN
             %li
-              %a{:href => "#"} BẢNG GIÁ
+              %a.bang-gia{:href => "#"} BẢNG GIÁ
             %li
-              %a{:href => "#{contact_calendars_path}"} LIÊN HỆ
+              %a.lien-he{:href => "#{contact_calendars_path}"} LIÊN HỆ
       .banner_header
       .art-sheet.clearfix
         .art-layout-wrapper
@@ -85,5 +85,6 @@
                   %a.art-rss-tag-icon{:href => "", :style => "line-height: 34px;"}>
                   \&nbsp;
                   %br/
+
 :javascript
   var g_token = '#{form_authenticity_token}';
