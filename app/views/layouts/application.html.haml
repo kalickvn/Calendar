@@ -39,6 +39,13 @@
             %li
               %a.lien-he{:href => "#{contact_calendars_path}"} LIÊN HỆ
       .banner_header
+      .text-over
+        .l-text
+          Tin tức cập nhật:
+        %div.marquee-text{:style =>"float:left"}
+          - @text_setting = Setting.where(:code => Setting::CODE_ATTR[:PROMOTE_NEWS].to_s).first
+          %marquee{:behavior => "scroll", :direction => "left", :onmouseover => "this.stop();", :onmouseleave => "this.start();"}
+            = @text_setting ? @text_setting.value.to_s : " "
       .art-sheet.clearfix
         .art-layout-wrapper
           .art-content-layout
