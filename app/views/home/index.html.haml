@@ -4,7 +4,7 @@
       .art-content-layout.layout-item-1
         .art-content-layout-row
           - @categories.each_with_index do |i,index|
-            %div{:class =>"art-layout-cell layout-item-#{index + 2} div-a",:style => "width: 25%",:onclick =>"window.location='#{calendars_path(:category_id =>1)}'"}
+            %div{:class =>"art-layout-cell layout-item-#{index + 2} div-a",:style => "width: 25%",:onclick =>"window.location='#{calendars_path(:category_id =>i.id)}'"}
               %div.center_image
                 =image_tag "img_lich/lich_bloc.jpg"
               %h1

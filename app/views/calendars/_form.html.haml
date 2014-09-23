@@ -23,6 +23,16 @@
       =f.select :category_id, Category.all.collect {|p| [ p.name, p.id ] }, { include_blank: true,:selected =>f.object.category_id }
   .row
     .col.col-lg-4
+      Nhóm Lịch:
+    .col.col-lg-8
+      =f.check_box :is_catalog,{},true,false
+      Lich catalog
+      %br
+      =f.check_box :is_owned,{},true,false
+      Lich catalog
+
+  .row
+    .col.col-lg-4
       Loại giấy:
     .col.col-lg-8
       =f.text_field :paper_type

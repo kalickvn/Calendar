@@ -13,18 +13,25 @@ class CalendarsController < ApplicationController
   # * login page if !current_user and home#index if current_user
   #*Author*:: NamTV
   def index
-    # if !current_user
-    #   flash[:notice] = flash[:notice]
-    #   redirect_to new_user_session_path
-    #   return
-    # end
-    # redirect_to after_sign_in_path_for(current_user)
-    @categories = Category.find(params["category_id"])
-    redirect_to root_path and return  if params["category_id"].blank? || @categories.blank?
     page = params["page"] || 1
     per_page = params["per_page"] || 10
+    if params["category_id"]
+    @categories = Category.find(params["category_id"])
+    redirect_to root_path and return  if params["category_id"].blank? || @categories.blank?
     @list_calendars = Calendar.where(:category_id => params["category_id"]).paginate(:page => page,:per_page => per_page)
+    elsif params["tag_type"]
+      is_catalog = true if params["tag_type"] ==1
+      if is_catalog
+        @categories = Category.find(5)
+        @list_calendars = Calendar.where(:is_catalog => true).paginate(:page => page,:per_page => per_page)
+      else
+        @categories = Category.find(6)
+        @list_calendars = Calendar.where(:is_owned => true).paginate(:page => page,:per_page => per_page)
+      end
     
+    else
+      redirect_to root_path and retur
+    end
   end
   
   def show
@@ -62,10 +69,10 @@ class CalendarsController < ApplicationController
       per_page = params[:iDisplayLength] ||  10
       page = params[:iDisplayStart] ? ((params[:iDisplayStart].to_i/per_page.to_i) + 1) : 1
       search_text = params["sSearch"] || ""
-      cols = ["name","size","description","categories.name"]
+      cols = ["name","description","categories.name"]
       select = "calendars.id,calendars.name, calendars.size,calendars.description,categories.name as category_name"
       sort_field =  cols[(params[:iSortCol_0].to_i)] + " " + params[:sSortDir_0].to_s
-      @calendars = Calendar.joins(:category).order(sort_field).select(select).paginate(:per_page => per_page,:page =>page)
+      @calendars = Calendar.joins(:category).order(sort_field).select(select).order("calendars.id desc").paginate(:per_page => per_page,:page =>page)
       render :json => {"aaData" => @calendars,"iTotalRecords"=>@calendars.length,"iTotalDisplayRecords"=>@calendars.length}
     end
   end
@@ -82,6 +89,13 @@ class CalendarsController < ApplicationController
 
   def update
     @gallery = Calendar.find(params[:id])
+    if params[:calendar][:is_catalog].blank?
+      params[:calendar][:is_catalog] = false
+    end
+    if params[:calendar][:is_owned].blank?
+      params[:calendar][:is_owned] = false
+    end
+
     if @gallery.update_attributes(params[:calendar])
       if params[:images]
           params[:images].each { |image|
