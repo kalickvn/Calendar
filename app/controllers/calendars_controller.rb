@@ -109,15 +109,17 @@ class CalendarsController < ApplicationController
   end
   
   def create
-    @gallery = Calendar.new(params[:calendar])
-    if @gallery.save
+    @calendar = Calendar.new(params[:calendar])
+    if @calendar.save
       if params[:images]
           params[:images].each { |image|
-            @gallery.photos.create(image: image)
+            @calendar.photos.create(image: image)
           }
       end
         redirect_to admin_calendars_path,:notice =>"Successfully created item."
     else
+      # @calendar = @gallery
+      @categories = Category.all
       render :new
     end
   end
