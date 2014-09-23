@@ -18,6 +18,7 @@ class HomeController < ApplicationController
     #   return
     # end
     # redirect_to after_sign_in_path_for(current_user)
+    @categories = Category.order("order_no").limit(4)
   end
   def introduction
     

@@ -3,43 +3,45 @@
     .art-content-layout-wrapper.layout-item-0
       .art-content-layout.layout-item-1
         .art-content-layout-row
-          .art-layout-cell.layout-item-2.div-a{:style => "width: 25%",:onclick =>"window.location='#{calendars_path(:category_id =>1)}'"}
-            %div.center_image
-              =image_tag "img_lich/lich_bloc.jpg"
-            %h1 Lịch tết 2015
-            %h6
-              Đáp ứng tất cả các yêu cầu liên quan đến thiết kế, in ấn lịch tết với đa dạng các mẫu thiết kế, hình ảnh độc đáo, độc quyền với mức giá cạnh tranh so với thị trường.
-              %span{:style => "color: rgb(21, 28, 35); -webkit-border-horizontal-spacing: 10px;"}
-            .more_nav
-              %a{:href =>"#{calendars_path(:category_id =>1)}"}  chi tiết >>  
+          - @categories.each_with_index do |i,index|
+            %div{:class =>"art-layout-cell layout-item-#{index + 2} div-a",:style => "width: 25%",:onclick =>"window.location='#{calendars_path(:category_id =>1)}'"}
+              %div.center_image
+                =image_tag "img_lich/lich_bloc.jpg"
+              %h1
+                =i.name
+              %h6
+                =i.description
+                %span{:style => "color: rgb(21, 28, 35); -webkit-border-horizontal-spacing: 10px;"}
+              .more_nav
+                %a{:href =>"#{calendars_path(:category_id =>i.id)}"}  chi tiết >>  
             %br/
-          .art-layout-cell.layout-item-3.div-a{:style => "width: 25%",:onclick =>"window.location='#{calendars_path(:category_id =>2)}'"}
-            %div.center_image
-              =image_tag "img_lich/lich_bloc.jpg"
-            %h1 Lịch Bloc
-            %h6
-              Đáp ứng tất cả các yêu cầu liên quan đến thiết kế, in ấn lịch tết với đa dạng các mẫu thiết kế, hình ảnh độc đáo, độc quyền với mức giá cạnh tranh so với thị trường.
-            .more_nav
-              %a{:href =>"#{calendars_path(:category_id =>2)}"}  chi tiết >>  
-            %br/
-          .art-layout-cell.layout-item-4.div-a{:style => "width: 25%",:onclick =>"window.location='#{calendars_path(:category_id =>3)}'"}
-            %div.center_image
-              =image_tag "img_lich/lich_bloc.jpg"
-            %h1 Lịch để bàn
-            %h6
-              Đáp ứng tất cả các yêu cầu liên quan đến thiết kế, in ấn lịch tết với đa dạng các mẫu thiết kế, hình ảnh độc đáo, độc quyền với mức giá cạnh tranh so với thị trường.
-            .more_nav
-              %a{:href =>"#{calendars_path(:category_id =>3)}"}  chi tiết >>  
-            %br/
-          .art-layout-cell.layout-item-5.div-a{:style => "width: 25%",:onclick =>"window.location='#{calendars_path(:category_id =>4)}'"}
-            %div.center_image
-              =image_tag "img_lich/lich_bloc.jpg"
-            %h1 Lịch lò xo
-            %h6
-              Đáp ứng tất cả các yêu cầu liên quan đến thiết kế, in ấn lịch tết với đa dạng các mẫu thiết kế, hình ảnh độc đáo, độc quyền với mức giá cạnh tranh so với thị trường.
-            .more_nav
-              %a{:href =>"#{calendars_path(:category_id =>4)}"}  chi tiết >>  
-            %br/
+          / .art-layout-cell.layout-item-3.div-a{:style => "width: 25%",:onclick =>"window.location='#{calendars_path(:category_id =>2)}'"}
+          /   %div.center_image
+          /     =image_tag "img_lich/lich_bloc.jpg"
+          /   %h1 Lịch Bloc
+          /   %h6
+          /     Đáp ứng tất cả các yêu cầu liên quan đến thiết kế, in ấn lịch tết với đa dạng các mẫu thiết kế, hình ảnh độc đáo, độc quyền với mức giá cạnh tranh so với thị trường.
+          /   .more_nav
+          /     %a{:href =>"#{calendars_path(:category_id =>2)}"}  chi tiết >>  
+          /   %br/
+          / .art-layout-cell.layout-item-4.div-a{:style => "width: 25%",:onclick =>"window.location='#{calendars_path(:category_id =>3)}'"}
+          /   %div.center_image
+          /     =image_tag "img_lich/lich_bloc.jpg"
+          /   %h1 Lịch để bàn
+          /   %h6
+          /     Đáp ứng tất cả các yêu cầu liên quan đến thiết kế, in ấn lịch tết với đa dạng các mẫu thiết kế, hình ảnh độc đáo, độc quyền với mức giá cạnh tranh so với thị trường.
+          /   .more_nav
+          /     %a{:href =>"#{calendars_path(:category_id =>3)}"}  chi tiết >>  
+          /   %br/
+          / .art-layout-cell.layout-item-5.div-a{:style => "width: 25%",:onclick =>"window.location='#{calendars_path(:category_id =>4)}'"}
+          /   %div.center_image
+          /     =image_tag "img_lich/lich_bloc.jpg"
+          /   %h1 Lịch lò xo
+          /   %h6
+          /     Đáp ứng tất cả các yêu cầu liên quan đến thiết kế, in ấn lịch tết với đa dạng các mẫu thiết kế, hình ảnh độc đáo, độc quyền với mức giá cạnh tranh so với thị trường.
+          /   .more_nav
+          /     %a{:href =>"#{calendars_path(:category_id =>4)}"}  chi tiết >>  
+          /  %br/
     .art-content-layout-wrapper.layout-item-6
       .art-content-layout.layout-item-7
         .art-content-layout-row
