@@ -96,7 +96,7 @@
           /     %span{:style => "color: rgb(21, 28, 35);"}
           /       %a.art-button{:href => "#"} Read more
           .art-layout-cell.layout-item-8.slide_thuy.border-lightgray{:style => "width: 75%"}
-            = render :partial =>"shared/intro"
+            = render :partial =>"shared/intro", :locals =>{:intro => @home_intro}
           .art-layout-cell.layout-item-9{:style => "width: 25%"}
             %h2
               %span{:style => "color: rgb(21, 28, 35); font-weight: bold;font-size:20px;"} LỊCH THEO CHỦ ĐỀ

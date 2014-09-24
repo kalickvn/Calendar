@@ -12,3 +12,24 @@ var Common = {
   }
 
 }
+
+function sendFile(file, editor, welEditable){
+  data = new FormData();
+  data.append("file", file);
+  $.ajax({
+      data: data,
+      type: "POST",
+      url: "/settings/normal_upload",
+      cache: false,
+      contentType: false,
+      processData: false,
+      success: function(url) {
+        console.log(url);
+        editor.insertImage(welEditable, url);
+      },
+      error: function(msg){
+        console.log(msg);
+
+      }
+  });
+}

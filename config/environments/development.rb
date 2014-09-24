@@ -31,7 +31,7 @@ HelloWorld::Application.configure do
 
   # Do not compress assets
   config.assets.compress = false
-
+  config.host_deploy = "lichtetviet.com.vn"
   # Expands the lines which load the assets
   config.assets.debug = true
   config.action_mailer.delivery_method = :smtp

@@ -19,8 +19,13 @@ class HomeController < ApplicationController
     # end
     # redirect_to after_sign_in_path_for(current_user)
     @categories = Category.order("order_no").limit(4)
+    @home_intro =Setting.where(:code => Setting::CODE_ATTR[:HOME_INTRO].to_s).first
   end
   def introduction
-    
+    @page_intro =Setting.where(:code => Setting::CODE_ATTR[:INTRO_FIELD].to_s).first
+  end
+  
+  def pricing_page
+    @page_intro =Setting.where(:code => Setting::CODE_ATTR[:PRICING_FIELD].to_s).first
   end
 end

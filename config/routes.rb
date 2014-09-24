@@ -6,7 +6,9 @@ HelloWorld::Application.routes.draw do
   #end
   # The priority is based upon order of creation:
   # first created -> highest priority.
-  resources :settings
+  resources :settings do
+    post "normal_upload", :on => :collection
+  end
   resources :categories
   resources :orders
   resources :organizations do
@@ -32,6 +34,7 @@ HelloWorld::Application.routes.draw do
   root :to => 'home#index'
   resources :home do
     get "introduction",:on => :collection
+    get "pricing_page",:on => :collection
   end
   # See how all your routes lay out with "rake routes"
 

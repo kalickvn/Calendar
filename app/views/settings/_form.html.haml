@@ -1,3 +1,5 @@
+=stylesheet_link_tag "editor/summernote"
+=javascript_include_tag "editor/summernote"
 - if params[:success]
   %div{:style =>"color:green"}
     Cấu hình hệ thống đã được cập nhật thành công.
@@ -21,7 +23,49 @@
       =text_field_tag "setting[email]",@email_setting ? @email_setting.value : ""
   .row
     .col.col-lg-4
+      Trang chủ:
+    .col.col-lg-8
+      =text_area_tag "setting[homepage]",@home_page ? @home_page.value : "",:class=>"hehe-e"
+  .row
+    .col.col-lg-4
+      Giới thiệu:
+    .col.col-lg-8
+      =text_area_tag "setting[intro_page]",@intro_page ? @intro_page.value : "",:class=>"intro-e"
+  .row
+    .col.col-lg-4
+      Bảng giá:
+    .col.col-lg-8
+      =text_area_tag "setting[pricing_page]",@pricing_page ? @pricing_page.value : "",:class=>"pricing-e"
+  .row
+    .col.col-lg-4
       &nbsp;
     .col.col-lg-8
       =submit_tag "Lưu",:class=>"art-button"
+:javascript
+  $(document).ready(function() {
+    $('.hehe-e').summernote({
+      height: 350,
+      onImageUpload: function(files, editor, welEditable) {
+        // console.log('image upload:', files, editor, welEditable);
+        sendFile(files[0], editor, welEditable);
+      }
+    });
+
+    $('.intro-e').summernote({
+      height: 350,
+      onImageUpload: function(files, editor, welEditable) {
+        // console.log('image upload:', files, editor, welEditable);
+        sendFile(files[0], editor, welEditable);
+      }
+    });
+
+    $('.pricing-e').summernote({
+      height: 350,
+      onImageUpload: function(files, editor, welEditable) {
+        // console.log('image upload:', files, editor, welEditable);
+        sendFile(files[0], editor, welEditable);
+      }
+    });
+
+  });
   
