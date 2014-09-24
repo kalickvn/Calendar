@@ -16,10 +16,10 @@
                   /     %a{:href =>"#"}
                   /       =i.name
             .right_content{:style=>"width:100%"}
-              %h1{:style =>"color: black"}
-                = @categories.name
-              %hr{:size => 1,:style =>"color: lightgray;margin: 1px 0px"}
-              -if params[:tag_type].blank?  
+              -if params[:tag_type].blank?
+                %h1{:style =>"color: black"}
+                  = @categories.name
+                %hr{:size => 1,:style =>"color: lightgray;margin: 1px 0px"}  
                 .row
                   -@list_calendars.each do |i|
                     .col.col-lg-3
@@ -27,6 +27,9 @@
                 .row
                   =will_paginate(@list_calendars)
               -else
+                %h1{:style =>"color: black"}
+                  = params[:tag_type].to_i == 1 ? "Lịch thiết kế Catalogue" : "Lịch thiết kế độc quyền"
+                %hr{:size => 1,:style =>"color: lightgray;margin: 1px 0px"}  
                 - tag_type = params[:tag_type].to_i == 1 ? true : false
                 -categories = Category.all
                 - categories.each do |i|
