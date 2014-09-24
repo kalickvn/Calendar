@@ -16,14 +16,27 @@
                   /     %a{:href =>"#"}
                   /       =i.name
             .right_content{:style=>"width:100%"}
-              %h1{:style =>"color: blue"}
-                = @categories.name.upcase
+              %h1{:style =>"color: black"}
+                = @categories.name
               %hr{:size => 1,:style =>"color: lightgray;margin: 1px 0px"}
-                
-              .row
-                -@list_calendars.each do |i|
-                  .col.col-lg-3
-                    =render :partial =>"shared/widget",:locals =>{:calendar => i}
-              .row
-                =will_paginate(@list_calendars)
+              -if params[:tag_type].blank?  
+                .row
+                  -@list_calendars.each do |i|
+                    .col.col-lg-3
+                      =render :partial =>"shared/widget",:locals =>{:calendar => i}
+                .row
+                  =will_paginate(@list_calendars)
+              -else
+                - tag_type = params[:tag_type].to_i == 1 ? true : false
+                -categories = Category.all
+                - categories.each do |i|
+                  - list_calendars = i.calendars.where(:is_catalog => true) if tag_type == true
+                  - list_calendars = i.calendars.where(:is_owned => true) if tag_type == false
+                  -if !list_calendars.blank?
+                    .head-group
+                      =i.name
+                    .row
+                      -list_calendars.each do |j|
+                        .col.col-lg-3
+                          =render :partial =>"shared/widget",:locals =>{:calendar => j}
             .clear-fix              
