@@ -8,7 +8,7 @@ class SettingsController < ApplicationController
     @email_setting = Setting.where(:code => Setting::CODE_ATTR[:EMAIL_FEED].to_s).first
     @home_page = Setting.where(:code => Setting::CODE_ATTR[:HOME_INTRO].to_s).first
     @intro_page = Setting.where(:code => Setting::CODE_ATTR[:INTRO_FIELD].to_s).first
-    @pricing_page = Setting.where(:code => Setting::CODE_ATTR[:PRICING].to_s).first
+    @pricing_page = Setting.where(:code => Setting::CODE_ATTR[:PRICING_FIELD].to_s).first
   end
 
   def index
