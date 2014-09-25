@@ -1,29 +1,42 @@
 =#javascript_include_tag ""
 = stylesheet_link_tag "flexslider"
-=# stylesheet_link_tag "demo"
-.flexslider
-  %ul.slides
-    / %li{"data-thumb" => "slide1-thumb.jpg"}
-    /   %img{:src => "slide1.jpg"}/
-    / %li{"data-thumb" => "slide2-thumb.jpg"}
-    /   %img{:src => "slide2.jpg"}/
-    / %li{"data-thumb" => "slide3-thumb.jpg"}
-    /   %img{:src => "slide3.jpg"}/
-    / %li{"data-thumb" => "slide4-thumb.jpg"}
-    /   %img{:src => "slide4.jpg"}/
-    -calendar.photos.each do |i|
-      %li{"data-thumb" => "#{i.image.url(:thumb)}"}
-        %img{:src => "#{i.image.url(:original)}"}/
+= stylesheet_link_tag "demo"
+%div
+  .flexslider{:id =>"slider"}
+    %ul.slides
+      -calendar.photos.each do |i|
+        %li
+          %img{:src => "#{i.image.url(:original)}"}/
+  .flexslider{:id =>"carousel"}
+    %ul.slides
+      -calendar.photos.each do |i|
+        %li
+          %img{:src => "#{i.image.url(:original)}"}/
 :javascript
   $(function(){
       SyntaxHighlighter.all();
     });
     $(window).load(function(){
-      $('.flexslider').flexslider({
+
+      $('#carousel').flexslider({
         animation: "slide",
-        controlNav: "thumbnails",
+        controlNav: false,
+        animationLoop: false,
+        slideshow: false,
+        itemWidth: 210,
+        itemMargin: 5,
+        asNavFor: '#slider'
+      });
+
+      $('#slider').flexslider({
+        animation: "slide",
+        controlNav: false,
+        animationLoop: true,
+        slideshow: true,
+        sync: "#carousel",
         start: function(slider){
           $('body').removeClass('loading');
         }
       });
+
     });
