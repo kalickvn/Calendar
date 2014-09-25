@@ -12,25 +12,26 @@
             .content-show
               .left-side.slide_thuy
                 =render :partial =>"shared/detail_slider2",:locals =>{:calendar => @calendar}
-              .right-side
+              .right-side{:style =>"width: 28%"}
                 .small-menu
                   .header-text
                     Thông số sản phẩm
                   .normal-menu{:style=>"color:black"}
                     %div
-                      Kích thước:
+                      %span.bold-txt Kích thước:
                       =@calendar.size
                     %div
-                      Loại Giấy: 
+                      %span.bold-txt Loại Giấy: 
                       =@calendar.paper_type
                     %div
-                      Bao bì:  
+                      %span.bold-txt Bao bì:  
                       =@calendar.box_type
+                    .clear-row-hr
                     %div
-                      Mô tả:  
+                      %span.bold-txt Mô tả:  
                       %div
                         =raw @calendar.description
-                    %div
+                    %div{:style =>"margin-top: 5px"}
                       %a.art-button{:href=>"#{new_order_path(:calendar_id => @calendar.id)}"}
                         Đặt Hàng
                     %div{:style=>"height:10px"}
