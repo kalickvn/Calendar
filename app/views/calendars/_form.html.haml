@@ -4,7 +4,7 @@
 =nested_form_for @calendar, :html => { :class => 'form-horizontal', multipart: true } do |f|
   - if @calendar.errors.any?
     .alert.alert-error
-      %div.head-error Error creating your new Category. Please correct the following errors
+      %div.head-error Có lỗi xảy ra. Vui lòng sửa các lỗi sau:
       %div.content-error
         %ul{:style => "list-style:none; padding:10px 10px 10px 10px;"}
           - for message in @calendar.errors.full_messages

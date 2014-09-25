@@ -4,7 +4,8 @@
 # By NamTV
 
 class CalendarsController < ApplicationController
-  skip_authorize_resource
+  skip_authorize_resource :only => [:index,:show,:contact,:send_contact,:product_contact,:send_product_contact]
+  # before_filter :authenticate_user! ,:only =>[:admin,:new,:edit,:update,:destroy]
   layout "admin",:only =>[:admin,:new,:edit]
   ##
   #Get user list except an user with specify ID
@@ -30,7 +31,7 @@ class CalendarsController < ApplicationController
       end
     
     else
-      redirect_to root_path and retur
+      redirect_to root_path and return
     end
   end
   

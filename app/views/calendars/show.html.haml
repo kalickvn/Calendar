@@ -19,17 +19,20 @@
                   .normal-menu{:style=>"color:black"}
                     %div
                       .bold-txt Kích thước:
-                      =@calendar.size
+                      .intent-text
+                        =@calendar.size
                     %div
-                      .bold-txt Loại Giấy: 
-                      =@calendar.paper_type
+                      .bold-txt Loại Giấy:
+                      .intent-text 
+                        =@calendar.paper_type
                     %div
                       .bold-txt Bao bì:  
-                      =@calendar.box_type
+                      .intent-text
+                        =@calendar.box_type
                     .clear-row-hr
                     %div
                       .bold-txt Mô tả:  
-                      %div
+                      %div.intent-text
                         =raw @calendar.description
                     %div{:style =>"margin-top: 5px"}
                       %a.art-button{:href=>"#{new_order_path(:calendar_id => @calendar.id)}"}
