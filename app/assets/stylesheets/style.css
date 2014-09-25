@@ -514,8 +514,8 @@ text-align: left;
 
 .responsive .art-header 
 {
-   background-image: url('template/header.png');
-   background-position: center center;
+   /*background-image: url('template/header.png');
+   background-position: center center;*/
 }
 
 .art-header>.widget 
@@ -2331,7 +2331,7 @@ blockquote p,
 {
    background:  url('template/footertwittericon.png') no-repeat scroll;
    margin:0 auto;
-   min-height:32px;
+   min-height:33px;
    min-width:32px;
    display: inline-block;
    text-indent: 35px;
