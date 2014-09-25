@@ -22,10 +22,10 @@ class CalendarsController < ApplicationController
     elsif params["tag_type"]
       is_catalog = true if params["tag_type"] ==1
       if is_catalog
-        @categories = Category.find(5)
+        #@categories = Category.find(5)
         @list_calendars = Calendar.where(:is_catalog => true).paginate(:page => page,:per_page => per_page)
       else
-        @categories = Category.find(6)
+        #@categories = Category.find(6)
         @list_calendars = Calendar.where(:is_owned => true).paginate(:page => page,:per_page => per_page)
       end
     
