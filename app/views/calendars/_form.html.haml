@@ -1,3 +1,6 @@
+=stylesheet_link_tag "editor/summernote"
+=javascript_include_tag "editor/summernote"
+
 =nested_form_for @calendar, :html => { :class => 'form-horizontal', multipart: true } do |f|
   - if @calendar.errors.any?
     .alert.alert-error
@@ -15,7 +18,7 @@
     .col.col-lg-4
       Mô tả:
     .col.col-lg-8
-      =f.text_area :description,:rows =>3
+      =f.text_area :description,:rows =>3,:class=>"descript_calendar"
   .row
     .col.col-lg-4
       Loại lịch:
@@ -64,3 +67,11 @@
     .col.col-lg-4 &nbsp;
     .col.col-lg-8
       =f.submit "Lưu"
+:javascript
+  $('.descript_calendar').summernote({
+      height: 350,
+      onImageUpload: function(files, editor, welEditable) {
+        // console.log('image upload:', files, editor, welEditable);
+        sendFile(files[0], editor, welEditable);
+      }
+    });
