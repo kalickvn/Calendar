@@ -1,5 +1,7 @@
 =stylesheet_link_tag "editor/summernote"
+
 =javascript_include_tag "editor/summernote"
+/ %progress
 - if params[:success]
   %div{:style =>"color:green"}
     Cấu hình hệ thống đã được cập nhật thành công.
@@ -45,26 +47,26 @@
   $(document).ready(function() {
     $('.hehe-e').summernote({
       height: 350,
-      onImageUpload: function(files, editor, welEditable) {
+      //onImageUpload: function(files, editor, welEditable) {
         // console.log('image upload:', files, editor, welEditable);
-        sendFile(files[0], editor, welEditable);
-      }
+      //  sendFile(files[0], editor, welEditable);
+      //}
     });
 
     $('.intro-e').summernote({
       height: 350,
-      onImageUpload: function(files, editor, welEditable) {
+      //onImageUpload: function(files, editor, welEditable) {
         // console.log('image upload:', files, editor, welEditable);
-        sendFile(files[0], editor, welEditable);
-      }
+      //  sendFile(files[0], editor, welEditable);
+      //}
     });
 
     $('.pricing-e').summernote({
       height: 350,
-      onImageUpload: function(files, editor, welEditable) {
+      //onImageUpload: function(files, editor, welEditable) {
         // console.log('image upload:', files, editor, welEditable);
-        sendFile(files[0], editor, welEditable);
-      }
+      //  sendFile(files[0], editor, welEditable);
+      //}
     });
 
   });

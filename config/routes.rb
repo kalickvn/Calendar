@@ -9,6 +9,13 @@ HelloWorld::Application.routes.draw do
   resources :settings do
     post "normal_upload", :on => :collection
   end
+
+  resources :banners do
+  end
+  
+  resources :advertisings do
+  end
+  
   resources :categories
   resources :orders
   resources :organizations do

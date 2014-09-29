@@ -12,7 +12,7 @@ class CalendarsController < ApplicationController
   #Parameters::
   #Return::
   # * login page if !current_user and home#index if current_user
-  #*Author*:: NamTV
+  #*Author*:: ThuyLC
   def index
     page = params["page"] || 1
     per_page = params["per_page"] || 10

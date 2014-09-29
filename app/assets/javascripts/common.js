@@ -24,7 +24,9 @@ function sendFile(file, editor, welEditable){
       contentType: false,
       processData: false,
       success: function(url) {
+        console.log("success");
         console.log(url);
+        console.log(welEditable);
         editor.insertImage(welEditable, url);
       },
       error: function(msg){
@@ -32,4 +34,14 @@ function sendFile(file, editor, welEditable){
 
       }
   });
+}
+
+function progressHandlingFunction(e){
+    if(e.lengthComputable){
+        $('progress').attr({value:e.loaded, max:e.total});
+        // reset progress on complete
+        if (e.loaded == e.total) {
+            $('progress').attr('value','0.0');
+        }
+    }
 }

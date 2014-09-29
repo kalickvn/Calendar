@@ -36,7 +36,10 @@
               %a{:href => "#"} BẢNG GIÁ
             %li
               %a{:href => "#{contact_calendars_path}"} LIÊN HỆ
-      .banner_header
+      -banner = Banner.first
+      -unless banner.blank?
+        .banner_header
+          =image_tag banner.image.url
       .art-sheet.clearfix
         .art-layout-wrapper
           .art-content-layout
@@ -61,7 +64,11 @@
                                   .menu-txt
                                     %a{:href =>"#{organization_users_path(1)}"} Quản lý người dùng
                                   .menu-txt
-                                    %a{:href =>"#{edit_setting_path(1)}"} Cấu hình hệ thống  
+                                    %a{:href =>"#{edit_setting_path(1)}"} Cấu hình hệ thống 
+                                  .menu-txt
+                                    %a{:href =>"#{edit_banner_path(1)}"} Quản lý banner 
+                                  .menu-txt
+                                    %a{:href =>"#{advertisings_path}"} Quản lý quảng cáo
                                   .menu-txt
                                     = link_to "Đăng xuất", destroy_user_session_path, :method =>'delete'
                             .right_content

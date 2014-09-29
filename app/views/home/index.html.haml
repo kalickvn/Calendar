@@ -132,6 +132,16 @@
               %a{:href => "http://www.easycounter.com/",:style=>"width:100%;text-align:center"}
                 %div
                   %img{:alt => "HTML Counter", :border => "0", :src => "http://www.easycounter.com/counter.php?kalickvn"}/
+            %p
+              -ad = Advertising.all
+              -unless ad.blank?
+                %h2
+                  %span QUẢNG CÁO
+                %div.qc-img
+                  -ad.each do |i|
+                    -if !i.image.blank?
+                      %a{:href => "#{i.link}"}
+                        =image_tag i.image.url(:original),:alt =>"QUẢNG CÁO"
 :javascript
   $(document).ready(function(){
     $(".trang-chu").addClass("active");

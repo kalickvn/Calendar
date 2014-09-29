@@ -1,0 +1,15 @@
+- if params[:success]
+  %div{:style =>"color:green"}
+    Banner đã được cập nhật thành công.
+- url = @banner.new_record? ? banners_path : banner_path
+= form_for @banner, :url => url, :html => { :multipart => true } do |form|
+  - if @banner.errors.any?
+    .alert.alert-error
+      %div.head-error Có lỗi xảy ra. Vui lòng sửa các lỗi sau:
+      %div.content-error
+        %ul{:style => "list-style:none; padding:10px 10px 10px 10px;"}
+          - for message in @banner.errors.full_messages
+            %li.li-error= message
+  = form.file_field :image
+  %br
+  =form.submit "Lưu",:class=>"art-button"

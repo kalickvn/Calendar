@@ -1,0 +1,27 @@
+- if params[:success]
+  %div{:style =>"color:green"}
+    Quảng cáo đã được cập nhật thành công.
+- url = @advertising.new_record? ? advertisings_path : advertising_path
+= form_for @advertising, :url => url, :html => { :multipart => true } do |form|
+  - if @advertising.errors.any?
+    .alert.alert-error
+      %div.head-error Có lỗi xảy ra. Vui lòng sửa các lỗi sau:
+      %div.content-error
+        %ul{:style => "list-style:none; padding:10px 10px 10px 10px;"}
+          - for message in @advertising.errors.full_messages
+            %li.li-error= message
+  .row
+    .col.col-lg-4
+      Link:
+    .col.col-lg-8
+      =form.text_field :link
+  .row
+    .col.col-lg-4
+      Hình ảnh:
+    .col.col-lg-8
+      -unless @advertising.new_record?
+        = form.object.image.url(:thumb)
+        = image_tag(form.object.image.url(:thumb)) 
+      = form.file_field :image
+  %br
+  =form.submit "Lưu",:class=>"art-button"

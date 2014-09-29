@@ -38,7 +38,13 @@
               %a.bang-gia{:href => "#{pricing_page_home_index_path}"} BẢNG GIÁ
             %li
               %a.lien-he{:href => "#{contact_calendars_path}"} LIÊN HỆ
-      .banner_header
+      -banner = Banner.first
+      -if !banner.blank?
+        .banner_header
+          =image_tag banner.image.url
+      -else
+        .banner_header
+          %img{:src=>"/assets/template/Banner2.jpg"}
       .text-over
         .l-text
           &nbsp;

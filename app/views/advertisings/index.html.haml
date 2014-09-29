@@ -1,0 +1,10 @@
+=javascript_include_tag "advertising"
+%h1{:style =>"color: black"}
+  Danh sách quảng cáo
+%hr{:size => 1,:style =>"color: lightgray;margin: 1px 0px"}
+%div
+  %a.btn.btn-primary{:href=>"#{new_advertising_path}"}
+    Thêm mới
+
+%div
+%table{:cellpadding=>"0",:cellspacing=>"0",:class=>"table table-striped dataTable group-service-dataTable custom_datatable",:style=>"width:100%",:id =>"ads_list"}
