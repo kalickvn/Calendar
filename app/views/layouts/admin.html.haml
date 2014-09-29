@@ -37,9 +37,12 @@
             %li
               %a{:href => "#{contact_calendars_path}"} LIÊN HỆ
       -banner = Banner.first
-      -unless banner.blank?
+      -if !banner.blank?
         .banner_header
           =image_tag banner.image.url
+      -else
+        .banner_header
+          %img{:src=>"/assets/template/Banner2.jpg"}
       .art-sheet.clearfix
         .art-layout-wrapper
           .art-content-layout
